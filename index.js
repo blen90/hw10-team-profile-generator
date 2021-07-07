@@ -21,13 +21,16 @@ function team() {
     
         }
     ]).then(choice => {
-        if(choice === "Manager")
-        newManager(data.name, data.id, data.email, data.office);
-        else if(response === "Engineer")
-        newEngineer(data.nameEng, data.emailEng, data.githubEng);
-        else if(response === "Intern")
-        newIntern(data.nameInt, data.idInt, data.emailInt, data.school);
-    })
+        if(choice.employees === "Manager") {
+        newManager();
+    }else if(choice.employees === "Engineer") {
+        newEngineer();
+    }else if(choice.employees === "Intern"){
+        newIntern();
+    // }else (choice.employees === "I don't want to add more team members")
+    }
+
+    });
    
     
 }
@@ -107,5 +110,5 @@ function newIntern () {
 team();
 
 
-newEngineer();
-newIntern();
+// newEngineer();
+// newIntern();
