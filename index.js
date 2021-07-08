@@ -75,7 +75,7 @@ function newEngineer () {
         {
             type:"input",
             message: "What is the engineer's Github Username?",
-            name: "usernameEng",
+            name: "githubUsername",
         },
         
     ]);
