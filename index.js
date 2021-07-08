@@ -6,6 +6,7 @@ const Manager = require('../../inclass/02-Homework/Main/lib/Manager');
 
 //constants to requiere employee classes
 
+// const employee = require('./lib/employee);
 // const manager = require('./lib/manager');
 // const engineer = require('./lib/engineer');
 // const intern = require('./lib/intern');
@@ -50,21 +51,6 @@ function team() {
                 message: "What is the employees's e-mail adress?",
                 name: "email",
             },
-            {
-                type:"input",
-                message: "What is the employees's office number?",
-                name: "office",
-            },
-            {
-                type:"input",
-                message: "What is the employees's GitHub username?",
-                name: "github",
-            },
-            {
-                type:"input",
-                message: "What school does the employee atteng?",
-                name: "school",
-            },
 
         ]);
     }
@@ -75,22 +61,22 @@ function newManager() {
         {
             type: "input",
             message: "What is the manager's name?",
-            name: "nameMan",
+            name: "name",
         },
         {
             type:"input",
             message: "What is the manager's ID number?",
-            name: "idMan",
+            name: "id",
         },
         {
             type:"input",
             message: "What is the manager's e-mail adress?",
-            name: "emailMan",
+            name: "email",
         },
         {
             type:"input",
             message: "What is the manager's office number?",
-            name: "officeMan",
+            name: "office",
         },
     ]);
 }
@@ -100,17 +86,17 @@ function newEngineer () {
         {
             type: "input",
             message: "What is the engineer's name?",
-            name: "nameEng",
+            name: "name",
         },
         {
             type:"input",
             message: "What is the engineer's ID number?",
-            name: "idEng",
+            name: "id",
         },
         {
             type:"input",
             message: "What is the engineer's e-mail adress?",
-            name: "emailEng",
+            name: "email",
         },
         {
             type:"input",
@@ -127,17 +113,17 @@ function newIntern () {
         {
             type: "input",
             message: "What is the intern's name?",
-            name: "nameInt",
+            name: "name",
         },
         {
             type:"input",
             message: "What is the intern's ID number?",
-            name: "idInt",
+            name: "id",
         },
         {
             type:"input",
             message: "What is the intern's e-mail adress?",
-            name: "emailInt",
+            name: "email",
         },
         {
             type:"input",
