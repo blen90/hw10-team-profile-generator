@@ -33,6 +33,41 @@ function team() {
     });
    
     
+    function Employee() {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is the employees's name?",
+                name: "name",
+            },
+            {
+                type:"input",
+                message: "What is the employees's ID number?",
+                name: "id",
+            },
+            {
+                type:"input",
+                message: "What is the employees's e-mail adress?",
+                name: "email",
+            },
+            {
+                type:"input",
+                message: "What is the employees's office number?",
+                name: "office",
+            },
+            {
+                type:"input",
+                message: "What is the employees's GitHub username?",
+                name: "github",
+            },
+            {
+                type:"input",
+                message: "What school does the employee atteng?",
+                name: "school",
+            },
+
+        ]);
+    }
 }
 
 function newManager() {
@@ -40,22 +75,22 @@ function newManager() {
         {
             type: "input",
             message: "What is the manager's name?",
-            name: "name",
+            name: "nameMan",
         },
         {
             type:"input",
             message: "What is the manager's ID number?",
-            name: "id",
+            name: "idMan",
         },
         {
             type:"input",
             message: "What is the manager's e-mail adress?",
-            name: "email",
+            name: "emailMan",
         },
         {
             type:"input",
             message: "What is the manager's office number?",
-            name: "office",
+            name: "officeMan",
         },
     ]);
 }
@@ -66,6 +101,11 @@ function newEngineer () {
             type: "input",
             message: "What is the engineer's name?",
             name: "nameEng",
+        },
+        {
+            type:"input",
+            message: "What is the engineer's ID number?",
+            name: "idEng",
         },
         {
             type:"input",
