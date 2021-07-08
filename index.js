@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('../../inclass/02-Homework/Main/lib/Manager');
 
+let team = [];
 //constants to requiere employee classes
 
 // const employee = require('./lib/employee);
@@ -12,26 +13,19 @@ const Manager = require('../../inclass/02-Homework/Main/lib/Manager');
 // const intern = require('./lib/intern');
 
   
-function team() {
-    inquirer.prompt([
-        {
-            type: "list",
-            message: "What type of employee would you like to add?",
-            name: "employees",
-            choices: ["Manager", "Engineer", "Intern", "I don't want to add more team members"]
+// function team() {
+//     inquirer.prompt([
+//         {
+//             type: "list",
+//             message: "What type of employee would you like to add?",
+//             name: "employees",
+//             choices: ["Manager", "Engineer", "Intern", "I don't want to add more team members"]
     
-        }
-    ]).then(choice => {
-        if(choice.employees === "Manager") {
-        newManager();
-    }else if(choice.employees === "Engineer") {
-        newEngineer();
-    }else if(choice.employees === "Intern"){
-        newIntern();
-    // }else (choice.employees === "I don't want to add more team members")
-    }
+//         }
+//     ]).then(choice => {
+        
 
-    });
+//     });
    
     
     function Employee() {
@@ -51,53 +45,47 @@ function team() {
                 message: "What is the employees's e-mail adress?",
                 name: "email",
             },
+        {
+            type: "list",
+            message: "What is your job position?",
+            name: "position",
+            choices: ["Manager", "Engineer", "Intern"]
+        }
+        
 
-        ]);
+        ]).then(function(Employee){
+            if(Employee.position === "Manager") {
+                newManager(Employee);
+            }else if(Employee.position === "Engineer") {
+                newEngineer(Employee);
+            }else if(Employee.position === "Intern"){
+                newIntern(Employee);
+            }
+
+        })
     }
-}
 
-function newManager() {
+Employee();
+
+function newManager(employeeAnswers) {
     inquirer.prompt([
-        {
-            type: "input",
-            message: "What is the manager's name?",
-            name: "name",
-        },
-        {
-            type:"input",
-            message: "What is the manager's ID number?",
-            name: "id",
-        },
-        {
-            type:"input",
-            message: "What is the manager's e-mail adress?",
-            name: "email",
-        },
+
         {
             type:"input",
             message: "What is the manager's office number?",
             name: "office",
         },
-    ]);
+    ]).then(function(answers) {
+        console.log("ANSWERS", answers)
+       let manager = new Manager (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.office)
+        console.log("NEW MANAGER",manager);
+        team.push(manager)
+        addEmployee();
+    })
 }
 
 function newEngineer () {
     inquirer.prompt([
-        {
-            type: "input",
-            message: "What is the engineer's name?",
-            name: "name",
-        },
-        {
-            type:"input",
-            message: "What is the engineer's ID number?",
-            name: "id",
-        },
-        {
-            type:"input",
-            message: "What is the engineer's e-mail adress?",
-            name: "email",
-        },
         {
             type:"input",
             message: "What is the engineer's Github Username?",
@@ -110,21 +98,7 @@ function newEngineer () {
 
 function newIntern () {
     inquirer.prompt([
-        {
-            type: "input",
-            message: "What is the intern's name?",
-            name: "name",
-        },
-        {
-            type:"input",
-            message: "What is the intern's ID number?",
-            name: "id",
-        },
-        {
-            type:"input",
-            message: "What is the intern's e-mail adress?",
-            name: "email",
-        },
+
         {
             type:"input",
             message: "What school does the intern attend?",
@@ -133,8 +107,64 @@ function newIntern () {
     ]);
 }
 
-team();
+function addEmployee(){
+    inquirer.prompt([
+        {
+            type: "confirm",
+            name: 'addEmployee',
+            message: "Would you like to add another employee to the team?"
+        }
+    ]).then(function(answers){
+        if(answers.addEmployee){
+            Employee();
+        } else {
+            // Render the team to the html page
+            let teamHTML = render(team);
+
+            // fs.writeFile(outputPath, teamHTML, )
+        }
+    })
+}
+
+// team();
 
 
 // newEngineer();
 // newIntern();
+
+//create boiler plate
+// create html for the card
+
+//start - put boiler plate html
+
+
+// let finalHTML = "";
+
+// startHtml() {
+//    finalHTML += `
+//    Boiler plate html
+
+//    `;
+// }
+
+
+// addEmployee() {
+//     employeeList.forEach( emp => {
+//         finalHtml += `
+//         //employee cards
+//         <div class="card">
+//         ${emp.name}
+//         ${emp.id}
+//         ${emp.email}
+//         </div>
+//         `;
+//     })
+// }
+
+// endHtml() {
+//     finalHTML += `
+//     </div>
+//     </body>
+//     </html>
+//     `;
+// }
