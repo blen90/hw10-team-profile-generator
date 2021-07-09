@@ -9,15 +9,10 @@
 
             //start - put boiler plate html
 
-const Employee = require("./lib/Employee");
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+let finalHtml = [];
 
-let finalHTML = [];
-
-    const startHtml = () => {
-    finalHTML +=
+let startHtml = () => {
+    finalHtml += 
     `<!DOCTYPE html>
 <html lang="en">
 
@@ -37,21 +32,10 @@ let finalHTML = [];
     <div class="jumbotron text-center">
             <h1 class="display-4">Blenda's team</h1>
         </div>
-
-
-   `;
-                    //cards for employees
-                const addEmployee = (answers) => {
-                    employeeList.forEach(emp => {
-                        finalHtml += `
-        <div class="card">
-        ${employee.getName}
-        ${employee.getId}
-        ${employee.getEmail}
-        </div>
         `;
-                        })
+};
 
+let teamMembers = () => {
 
                 //Card for manager role
                 const addManager = manager => {
@@ -74,7 +58,7 @@ let finalHTML = [];
 
                 //cards for engineer role
                 const addEngineer = engineer => {
-                    finalHtml += `
+                    return `
     <div class="team-cards col-9 d-flex justify-content-center"></div>
 <div class="team-card" style="width: 18rem;">
     <div class="card-header">
@@ -89,8 +73,10 @@ let finalHTML = [];
         </ul>
     </div>
     `;
-        };
-                //card for intern role
+         };
+        
+
+         //card for intern role
                 const addIntern = intern => {
                     finalHtml += `
         <div class="team-card" style="width: 18rem;">
@@ -106,20 +92,33 @@ let finalHTML = [];
         </ul>
     </div>
         `;
-                };
-            const endHtml = () => {
+    };
+        endHtml = () => {
             finalHtml +=
-                                            `
-    </body>
+     ` </body>
     </html>
     `;
-            }
-     }
+                };
 }
 
-// Push functions to empty final Html array
-finalHtml.push(startHtml, addEmployee, addManager, addEngineer, addIntern);
-
+// Push finalHtml functions to file
+finalHtml.push(startHtml)
+finalHtml.push(teamMembers
+    .filter(employee =>getRole() === "Manager")
+    .map(manager => addManager(manager))
+    );
+    finalHtml.push(teamMembers
+        .filter(employee =>getRole() === "Engineer")
+        .map(engineer => addEngineer(engineer))
+        .join("")
+        );
+    finalHtml.push(teamMembers
+        .filter(employee =>getRole() === "Intern")
+        .map(intern => addIntern(intern))
+        .join("")
+        );
+    
+finalHtml.push(endHtml );
 
 
 // writeHtml function
