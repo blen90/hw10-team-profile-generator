@@ -16,3 +16,5 @@ describe ("Employee", () => {
     expect(employee.role).toEqual(role);
     }
     })
+
+    //Test that when you instatiate a new instance if all the properties are being declared. 

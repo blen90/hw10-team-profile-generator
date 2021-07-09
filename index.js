@@ -15,8 +15,6 @@ let team = [];
 
 
 
-
-  
 // function team() {
 //     inquirer.prompt([
 //         {
@@ -32,7 +30,7 @@ let team = [];
 //     });
    
     
-    function Employee() {
+    function newEmployee() {
         inquirer.prompt([
             {
                 type: "input",
@@ -57,13 +55,13 @@ let team = [];
         }
         
 
-        ]).then(function(Employee){
-            if(Employee.position === "Manager") {
-                newManager(Employee);
-            }else if(Employee.position === "Engineer") {
-                newEngineer(Employee);
-            }else if(Employee.position === "Intern"){
-                newIntern(Employee);
+        ]).then(function(newEmployee){
+            if(newEmployee.position === "Manager") {
+                newManager(newEmployee);
+            }else if(newEmployee.position === "Engineer") {
+                newEngineer(newEmployee);
+            }else if(newEmployee.position === "Intern"){
+                newIntern(newEmployee);
             }
 
         })
@@ -81,12 +79,13 @@ function newManager(employeeAnswers) {
         console.log("ANSWERS", answers)
        let manager = new Manager (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.office)
         console.log("NEW MANAGER",manager);
-        team.push(manager)
+        team.push(manager);
         addEmployee();
     })
 }
 
-function newEngineer () {
+
+function newEngineer (employeeAnswers) {
     inquirer.prompt([
         {
             type:"input",
@@ -98,13 +97,13 @@ function newEngineer () {
         console.log("ANSWERS", answers)
        let engineer = new Engineer (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.githubUsername)
         console.log("NEW ENGINEER",engineer);
-        team.push(engineer)
+        team.push(engineer);
         addEmployee();
     })
 }
 
 
-function newIntern () {
+function newIntern (employeeAnswers) {
     inquirer.prompt([
 
         {
@@ -114,9 +113,9 @@ function newIntern () {
         },
     ]).then(function(answers) {
         console.log("ANSWERS", answers)
-       let intern = new intern (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.githubUsername)
+       let intern = new Intern (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.school)
         console.log("NEW INTERN",intern);
-        team.push(intern)
+        team.push(intern);
         addEmployee();
     })
 }
@@ -130,7 +129,7 @@ function addEmployee(){
         }
     ]).then(function(answers){
         if(answers.addEmployee){
-            Employee();
+            newEmployee();
         } else {
             // Render the team to the html page
             let teamHTML = build(team);
@@ -147,5 +146,5 @@ function addEmployee(){
 }
 
 
-Employee();
+newEmployee();
 
