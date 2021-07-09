@@ -9,6 +9,8 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern= require("./lib/Intern");
 
+const { build } = require("./lib/htmlCreator");
+
 let team = [];
 
 
@@ -66,8 +68,6 @@ let team = [];
 
         })
     }
-
-Employee();
 
 function newManager(employeeAnswers) {
     inquirer.prompt([
@@ -133,16 +133,19 @@ function addEmployee(){
             Employee();
         } else {
             // Render the team to the html page
-            let teamHTML = render(team);
+            let teamHTML = build(team);
 
-            // fs.writeFile(outputPath, teamHTML, )
+            fs.writeFile('finalHtml.html', teamHTML, (err) => {
+                if(err){
+                    console.log("err");
+                } else {
+                    console.log("finalHtml.html file created");
+                }
+            })
         }
     })
 }
 
-// team();
 
-
-// newengineer();
-// newIntern();
+Employee();
 

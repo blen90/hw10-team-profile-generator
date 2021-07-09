@@ -1,5 +1,6 @@
-const Engineer = require("./lib/Engineer")
 const Employee = require("../lib/Employee")
+const Engineer = require("./lib/Engineer")
+
 
 describe ("Engineer", () => {
     it("Should add a new role of engineer to the team", () => {
@@ -9,7 +10,8 @@ describe ("Engineer", () => {
         let role = "Engineer";
         let githubUsername = "blen90";
 
-    const engineer = new engineer (name, id, email, role, githubUsername);
+    const engineer = new Engineer (name, id, email, role, githubUsername);
+    expect(engineer instanceof Employee).toEqual(true);
     expect(engineer.name).toEqual(name);
     expect(engineer.id).toEqual(id);
     expect(engineer.role).toEqual(role);
