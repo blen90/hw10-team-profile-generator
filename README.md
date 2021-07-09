@@ -5,7 +5,8 @@
 
 (Click on the image below to be redirected to Youtube demo video)
 
-[![Team Profile Generator file Demo](jpg)](https://)
+
+[![Team Profile Generator file Demo](./output/demo-screenshot.jpg)](https://www.youtube.com/watch?v=kt0x8Xmc4Dk)
 
 ## My task
 
@@ -13,13 +14,17 @@ My task for this homework was to create a Team Profile Generator.
 
 The positions available to add new employees were Manager, Engineer and Intern. We have a series of questions that run through node and then the information that is provided is rendered in a final Html file that shows employee cards.
 
+No code or files were provided for me so everything was built from scratch. 
+
+
 Example of how the website looks like once the final Html file is created
 
 ## Screenshot of Team Profile Generator 
 
-![Team Profile Generator](./)
 
-No code or files were provided for me so everything was built from scratch. 
+![Team Profile Generator](./output/team-profile-generator.jpg)
+
+
 
 ## Criteria
 
