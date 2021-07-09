@@ -68,6 +68,7 @@ let team = [];
     }
 
 function newManager(employeeAnswers) {
+    console.log("NEW MANAGER", employeeAnswers)
     inquirer.prompt([
 
         {
@@ -77,8 +78,8 @@ function newManager(employeeAnswers) {
         },
     ]).then(function(answers) {
         console.log("ANSWERS", answers)
-       let manager = new Manager (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.office)
-        console.log("NEW MANAGER",manager);
+       let manager = new Manager (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.position, answers.office)
+        console.log("NEW MANAGER WITH NUMBER",manager);
         team.push(manager);
         addEmployee();
     })
@@ -95,7 +96,7 @@ function newEngineer (employeeAnswers) {
         
     ]).then(function(answers) {
         console.log("ANSWERS", answers)
-       let engineer = new Engineer (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.githubUsername)
+       let engineer = new Engineer (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.position, answers.githubUsername)
         console.log("NEW ENGINEER",engineer);
         team.push(engineer);
         addEmployee();
@@ -113,7 +114,7 @@ function newIntern (employeeAnswers) {
         },
     ]).then(function(answers) {
         console.log("ANSWERS", answers)
-       let intern = new Intern (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, answers.school)
+       let intern = new Intern (employeeAnswers.name, employeeAnswers.id, employeeAnswers.email, employeeAnswers.position, answers.school)
         console.log("NEW INTERN",intern);
         team.push(intern);
         addEmployee();
