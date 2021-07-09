@@ -19,19 +19,16 @@
 
 div.team-card {
     width: 25%;
-    display: inline-flex;
+    /* display: inline-flex; */
     height: auto;
     flex-wrap: wrap;
     border-radius: 5px;
 }
 
 .team-card {
-    /* display:inline-block; */
     background-image: url(1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    /* color: white; */
-    /* text-shadow: black 0.3em 0.3em 0.3em; */
 }
 
 .card-name, .card-position {

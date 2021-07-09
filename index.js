@@ -12,23 +12,7 @@ const Intern= require("./lib/Intern");
 const { build } = require("./lib/htmlCreator");
 
 let team = [];
-
-
-
-// function team() {
-//     inquirer.prompt([
-//         {
-//             type: "list",
-//             message: "What type of employee would you like to add?",
-//             name: "employees",
-//             choices: ["Manager", "Engineer", "Intern", "I don't want to add more team members"]
-    
-//         }
-//     ]).then(choice => {
-        
-
-//     });
-   
+  
     
     function newEmployee() {
         inquirer.prompt([
@@ -135,7 +119,7 @@ function addEmployee(){
             // Render the team to the html page
             let teamHTML = build(team);
 
-            fs.writeFile('finalHtml.html', teamHTML, (err) => {
+            fs.writeFile('./output/finalHtml.html', teamHTML, (err) => {
                 if(err){
                     console.log("err");
                 } else {
