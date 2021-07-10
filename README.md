@@ -36,6 +36,12 @@ My task for this homework was to create a Team Profile Generator.
 
 The positions available to add new employees were Manager, Engineer and Intern. We have a series of questions that run through node and then the information that is provided is rendered in a final Html file that shows employee cards.
 
+The finalHtml file gets added to the output folder
+
+```
+./output/finalHtml.html
+```
+
 No code or files were provided for me so everything was built from scratch. 
 
 ---
