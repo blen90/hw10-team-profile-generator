@@ -3,7 +3,7 @@ const Intern = require("../lib/Intern");
 
 
 describe ("Intern", () => {
-    it("Should add a new position of intern to the team", () => {
+    it("Should add school to intern", () => {
         let name = "Blenda";
         let id = 12;
         let email = "blenda@gmail.com";
@@ -12,10 +12,11 @@ describe ("Intern", () => {
 
     const intern = new Intern (name, id, email, position, school);
     expect(intern instanceof Employee).toEqual(true);
-    expect(intern.name).toEqual("Blenda");
-    expect(intern.id).toEqual(12);
-    expect(intern.position).toEqual("Intern");
-    expect(intern.githubUsername).toEqual("University of Minnesota");
+    expect(intern.name).toEqual(name);
+    expect(intern.id).toEqual(id);
+    expect(intern.email).toEqual(email);
+    expect(intern.position).toEqual(position);
+    expect(intern.school).toEqual(school);
     })
     
 
