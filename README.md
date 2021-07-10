@@ -1,13 +1,35 @@
 # hw10-team-profile-generator
 
+## Screenshot of Team Profile Generator 
 
+![Team Profile Generator](./output/team-profile-generator.jpg)
+
+---
 ## Demo of the app
 
-(Click on the image below to be redirected to Youtube demo video)
+To run the app you will need to add the following command to the terminal
 
+```
+node index.js
+```
+(Click on the image below to be redirected to the Youtube demo video)
 
 [![Team Profile Generator file Demo](./output/demo-screenshot.jpg)](https://www.youtube.com/watch?v=kt0x8Xmc4Dk)
 
+---
+## Test demo
+
+To run the test you will need to add the following command to the terminal
+
+```
+npm run test
+```
+
+(Click on the image below to be redirected to the Youtube demo video)
+
+[![Team Profile Generator test Demo](./output/test-demo.jpg)](https://www.youtube.com/watch?v=6FcOg1TgJRc)
+
+---
 ## My task
 
 My task for this homework was to create a Team Profile Generator. 
@@ -16,16 +38,7 @@ The positions available to add new employees were Manager, Engineer and Intern. 
 
 No code or files were provided for me so everything was built from scratch. 
 
-
-Example of how the website looks like once the final Html file is created
-
-## Screenshot of Team Profile Generator 
-
-
-![Team Profile Generator](./output/team-profile-generator.jpg)
-
-
-
+---
 ## Criteria
 
 ```
