@@ -20,16 +20,9 @@ describe ("Engineer", () => {
 
     });
     
-    // })
     })
 
-    //     let id = 12;
-    //     let email = "blenda@gmail.com";
-    //     let position = "Manager";
-    //     let githubUsername = "blen90";
-
-    // const engineer = 
-    // expect(engineer instanceof Employee).toEqual(true);
+    
    
     
    
