@@ -1,4 +1,4 @@
-# hw10-team-profile-generator
+# Team Profile Generator
 
 ## Screenshot of Team Profile Generator 
 
