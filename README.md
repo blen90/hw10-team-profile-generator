@@ -4,7 +4,7 @@
 
 # Description
 
-This app is a Team Profile Generator. It allows the user to add new team members such as Manager, Engineer or Intern. 
+This app is a Team Profile Generator. It allows the user to add new team members such as manager, engineer or intern and creates an HTML file once the team is complete. Once the HTML file is generated the user can send an email to the email address that was added to each employee or be redirected to the engineer's GitHub profile. 
 
 ## Screenshots of the app
 
@@ -52,7 +52,7 @@ npm run test
 
 # Usage
 
-Once the user runs ```node index.js``` in the comman line they will be prompted with a few questions. Once the user has filled out the information an HTML file will be generated and it can be viewed in the brower. 
+Once the user runs ```node index.js``` in the comman line they will be prompted with a few questions. Once the user has filled out the information an HTML file will be generated and it can be viewed in the browser. The links are functional for email and to be redirected to GitHub. 
 
 The finalHtml file gets added to the output folder and shows up as the following:
 
