@@ -6,7 +6,7 @@
 
 This app is a Team Profile Generator. It allows the user to add new team members such as manager, engineer or intern and creates an HTML file once the team is complete. Once the HTML file is generated the user can send an email to the email address that was added to each employee or be redirected to the engineer's GitHub profile. 
 
-## Screenshots of the app
+## Screenshot of the app
 
 ![Team Profile Generator](./output/team-profile-generator.jpg)
 
